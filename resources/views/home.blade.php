@@ -13,7 +13,7 @@
             <th scope="col">Departure Time</th>
             <th scope="col">To</th>
             <th scope="col">Arrival Time</th>
-            <th scope="col">In Time</th>
+            <th scope="col">Delay</th>
             <th scope="col">Deleted</th>
           </tr>
         </thead>
@@ -26,12 +26,16 @@
             <td>{{$train['departure_time']}}</td>
             <td>{{$train['arrival']}}</td>
             <td>{{$train['arrival_time']}}</td>
-            <td>{{$train['is_in_time']}}</td>
-            <td>{{$train['is_deleted']}}</td>
+            <td @if($train['is_in_time'] == 0) class="text-danger" @endif>
+                {{$train['is_in_time'] == 1 ? '--' : 'YES'}}
+            </td>
+            <td @if($train['is_deleted'] == 1) class="text-danger" @endif>
+                {{$train['is_deleted'] == 1 ? 'DELETED' : '--'}}
+            </td>
           </tr>
         @endforeach
           
         </tbody>
       </table>
-</div>
+
 @endsection
