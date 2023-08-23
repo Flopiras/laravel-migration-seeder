@@ -23,9 +23,9 @@
           <tr>
             <th scope="row">{{$train['company']}}</th>
             <td>{{$train['departure']}}</td>
-            <td>{{$train['departure_time']}}</td>
+            <td>{{ $train->stamp_departure_time() }}</td>
             <td>{{$train['arrival']}}</td>
-            <td>{{$train['arrival_time']}}</td>
+            <td>{{ $train->stamp_arrival_time() }}</td>
             <td @if($train['is_in_time'] == 0) class="text-danger" @endif>
                 {{$train['is_in_time'] == 1 ? '--' : 'YES'}}
             </td>
