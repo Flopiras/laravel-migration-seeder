@@ -13,6 +13,9 @@
      @vite('resources/js/app.js')
 </head>
 <body>
+    {{-- header --}}
+    @include('includes.header')
+
     {{-- main --}}
     <main>
         @yield('main')
